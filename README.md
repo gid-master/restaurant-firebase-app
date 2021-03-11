@@ -8,7 +8,7 @@ The idea behind this project is to cover some of the most important functionalit
 
 * [Devices Suport](#devices-support)
 * [Firebase Approaches](#firebase-approaches)
-* [Firebase Settings](#firebase-setting)
+* [Firebase Settings](#firebase-settings)
 * [Vue 3 Approaches](#vue-3-approaches)
 * [How to Run](#how-tu-run)
 * [Using Mock](#using-mock)
