@@ -43,27 +43,42 @@ Check out the list of screens that can be used to play around with this demo.
 There are some of the most common Firebase concepts that were approached in this application.\
 
 * Firestore Database
+
+  All Firestore queries are inside services folder.
+
   * Add new data generating uid automatically
   * Update data using set and update
   * Retrieve data using get and where condition
   * Async foreach to organize the data based on doc and id
 
 * Firebase Cloud Message (FCM)
+
+  The entire cloud messaging logic is inside PwaControler (components/shared/pwa), and also inside firebase-service-sw (public folder).
+
   * Firebase dedicated service worker to listen to background message
   * Application message listen to notify directly form the app
   * Custom Request Permission to save user registration token
 
 * Firebase Hosting
+
+  There is a section dedicated to it at the end of the dopcumentation.
+
   * Firebase CLI to authenticate
   * Setting firebase file to pre config project target
 
 * Firebase Authentication
+
+  All auth functions are inside the UserService (services folder), and there is a listner inside main.ts to authenticate a user using token.
+
   * Powerful authentication lib
   * Create new user using email and password provider
   * Sign in and Logout functionalities
   * Listen to user auto authentication (jwt user token)
 
 * Firebase Cloud Functions
+
+  There is a functions folder with all methods used. However, inside CheckoutService (services folder) there is a commented method with an example of how to call a cloud function from the serverless project.
+
   * onRequest function used to trigger some API using url (initialize database with products)
   * onCall function used to be called by code (Process checkout)
 
@@ -83,6 +98,16 @@ To handle cloud functions you have to create a service connection and add it int
 
 PS: If you don't care about cloud functions, you can you this Firebase project locally.\
 The same checkout function that I added in the cloud function I also kept in the Checkout service.
+
+
+#### Cloud Functions
+
+In order to get the cloud function working, after you create your own Firebase project, you need to create a service account and add into the <strong>admin.credential.cert</strong>.
+
+admin.initializeApp({
+  credential: admin.credential.cert({}),
+  databaseURL: "https://restaurant-app-f8a06.firebaseio.com"
+});
 
 ## Vue 3 Approaches
 
