@@ -1,0 +1,51 @@
+<template>
+  <div class="ingredients">
+    <ul>
+      <li v-for="ingredient of ingredients" :key="ingredient"
+        ><span>{{ ingredient }}</span></li
+      >
+    </ul>
+  </div>
+</template>
+
+<script lang="ts">
+  import { defineComponent } from "vue";
+
+  export default defineComponent({
+    name: "ProductIngredients",
+    props: {
+      ingredients: Array as () => string[]
+    }
+  });
+</script>
+
+<style scoped lang="scss">
+  .ingredients {
+    ul {
+      list-style: none;
+      color: $text-dark-secondary;
+      // font-size: 14px;
+
+      li {
+        position: relative;
+        margin-left: 20px;
+
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          border-right: 2px solid $primary-color;
+          border-bottom: 2px solid $primary-color;
+          width: 10px;
+          height: 10px;
+          top: 12px; // calc(50% - 4px);
+          left: -25px;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+      }
+    }
+  }
+</style>
