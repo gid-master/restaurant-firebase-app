@@ -104,10 +104,14 @@ The same checkout function that I added in the cloud function I also kept in the
 
 In order to get the cloud function working, after you create your own Firebase project, you need to create a service account and add into the <strong>admin.credential.cert</strong>.
 
+
+```
 admin.initializeApp({
   credential: admin.credential.cert({}),
   databaseURL: "https://restaurant-app-f8a06.firebaseio.com"
 });
+```
+
 
 ## Vue 3 Approaches
 
